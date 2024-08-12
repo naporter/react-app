@@ -3,11 +3,7 @@ interface Props {
 }
 
 const Statement = ({ children }: Props) => {
-  return (
-    <div className="container-fluid">
-      <p>{children}</p>
-    </div>
-  );
+  return <p className="item">{children}</p>;
 };
 
 export default Statement;

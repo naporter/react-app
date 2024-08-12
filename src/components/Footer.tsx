@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <div className="container-fluid">
+    <div className="footer">
       <a
         className="ci ci-linkedin ci-2x"
         href="https://www.linkedin.com/in/nathanaporter/"

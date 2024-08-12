@@ -10,7 +10,7 @@ const LanguageList = ({ type, languages }: Props) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   return (
-    <div className="container-fluid">
+    <div className="item">
       <h1>{type}</h1>
       {languages.length === 0 && <p>No languages found</p>}
       <ul className="nav nav-tabs">

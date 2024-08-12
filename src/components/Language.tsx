@@ -4,11 +4,7 @@ interface Props {
 }
 
 const Language = ({ name, description }: Props) => {
-  return (
-    <div className="container-fluid" key={name}>
-      {description}
-    </div>
-  );
+  return <p key={name}>{description}</p>;
 };
 
 export default Language;
