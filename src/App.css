@@ -1,41 +1,187 @@
-* {
-  background-color: #6482AD;
+:root {
+  --primary-color: #ABABAB;
+  --secondary-color: #EDEDED;
+  --accent-color: #4D8AE4;
+  --text-color: #21201F;
+  --content-visible: visible;
 }
 
-:root {
-  background-color: #6482AD;
+/* reset html */
+a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline
 }
+
+html:after,html:before {
+  content: "";
+  will-change: top left;
+  backface-visibility: hidden;
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 20px;
+  background: var(--secondary-color);
+  z-index: 21000
+}
+
+html:before {
+  left: 0
+}
+
+html:after {
+  right: 0
+}
+
+body {
+  background: var(--primary-color);
+  min-height: calc(100vh - 40px);
+  position: relative;
+  padding: 20px
+}
+
+body:after,body:before {
+  content: "";
+  will-change: top left;
+  backface-visibility: hidden;
+  position: fixed;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background: var(--secondary-color);
+  z-index: 20000
+}
+
+body:before {
+  top: 0
+}
+
+body:after {
+  bottom: 0
+}
+
+.pagewrap {
+  min-height: calc(100vh - 40px);
+  position: relative;
+  background: var(--primary-color);
+  overflow: hidden;
+}
+
 .container {
-  background-color: #6482AD;
-  margin: 0%;
+  background: var(--primary-color);
+  height: calc(100vh - 110px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid var(--text-color);
 }
-.item {
-  h1 {
-    background-color: #7FA1C3;
+
+.container-item {
+  font-size: calc(.25vw + 2vh);
+  max-width: 70%;
+  .bold {
+    color: var(--accent-color);
   }
-  ul {
-    background-color: #7FA1C3;
-  }
-  li {
-    background-color: #7FA1C3;
-  }
-  p {
-    background-color: #7FA1C3;
-  }
-  color: #E2DAD6;
-  flex: none;
-  background-color: #7FA1C3;
-  margin: 1rem;
-  border-radius: 25px;
-  border: 2px solid #F5EDED;
-  padding: 25px;
 }
-.footer {
-  a {
-    background-color: #7FA1C3;
-  }
-  background-color: #7FA1C3;
-  text-align: center;
-  padding: 5%;
-  margin: 1rem;
+
+ .grid-header {
+  color: var(--secondary-color);
+  width: 70%;
+ }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 250px);
+  justify-content: center;
+  column-gap: 20px;
+}
+.grid-item-left {
+  text-align: right;
+  padding-right: 20px;
+  justify-content: right; 
+  border-right: 2px solid var(--accent-color);
+}
+.grid-item-right {
+  text-align: left;
+  justify-content: left; 
+}
+.menu {
+  display: flex;
+  padding-left: 70px;
+}
+.nav-bar {
+  top: 0px;
+  height: 5vh;
+  padding: 10px;
+  display: flex;
+  position: sticky;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  z-index: auto;
+}
+.nav-item {
+  font-size: calc(1vh + 0.5vh);
+}
+.nav-menu {
+  color: var(--secondary-color);
+  cursor: pointer;
+  transition: all 0.3s;
+  transform-origin: 50% 50%;
+  flex: 1;
+}
+.nav-resume {
+  color: var(--text-color);
+  cursor: default;
+}
+.nav-item {
+  margin: 0px;
+}
+.menu-nav:hover {
+  filter: brightness(98%) contrast(82%) invert(48%) sepia(25%) saturate(3053%) hue-rotate(197deg);
+  transform: scale(1.2);
+  gap: 10px;
+}
+
+.image {
+  cursor: pointer;
+  height: 24px;
+  transition: all 0.3s;
+  transform-origin: 50% 50%;
+}
+.image:hover {
+  filter: brightness(98%) contrast(82%) invert(48%) sepia(25%) saturate(3053%) hue-rotate(197deg);
+  transform: scale(1.2);
+}
+.statement {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+.scroll {
+  font-size: large;
+}
+.pulse {
+  cursor: default;
+  color: var(--accent-color);
+  animation: pulse 3s infinite;
+  transform: scale(1);
+}
+@keyframes pulse {
+	0% {
+		transform: scale(0.65);
+	}
+
+	50% {
+		transform: scale(0.8);
+	}
+
+	100% {
+		transform: scale(0.65);
+	}
 }

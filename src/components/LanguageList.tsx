@@ -10,33 +10,20 @@ const LanguageList = ({ type, languages }: Props) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   return (
-    <div className="item">
-      <h1>{type}</h1>
-      {languages.length === 0 && <p>No languages found</p>}
-      <ul className="nav nav-tabs">
+    <>
+      <h1 className="grid-header">{type}</h1>
+      <div className="grid-container">
+        {languages.length === 0 && <p>No languages found</p>}
         {languages.map((item, index) => (
-          <li key={item.name} className="nav-item">
-            <a
-              className={
-                selectedIndex === index ? "nav-link active" : "nav-link"
-              }
-              key={item.name}
-              onClick={() => {
-                setSelectedIndex(index);
-              }}
-            >
-              {item.name}
-            </a>
-          </li>
+          <Language
+            key={item.name}
+            name={item.name || "No name available"}
+            description={item.description || "No description available"}
+            index={index}
+          />
         ))}
-      </ul>
-      <Language
-        name={languages.at(selectedIndex)?.name || "No name available"}
-        description={
-          languages.at(selectedIndex)?.description || "No description available"
-        }
-      ></Language>
-    </div>
+      </div>
+    </>
   );
 };
 

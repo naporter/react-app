@@ -1,9 +1,20 @@
 interface Props {
-  children: string;
+  intro: JSX.Element;
+  body: string;
 }
 
-const Statement = ({ children }: Props) => {
-  return <p className="item">{children}</p>;
+const Statement = ({ intro, body }: Props) => {
+  return (
+    <div className="container">
+      <div className="container-item statement">
+        <p className="typed">
+          {intro}
+          {body}
+        </p>
+      </div>
+      <p className="container-item pulse scroll">SCROLL</p>
+    </div>
+  );
 };
 
 export default Statement;

@@ -1,6 +1,12 @@
-const strings = {
-  myStatement:
-    "Hello! I am Nathan Porter, a software developer with 3+ years experience. I graduated in 2021 from the University of Memphis with a 3.7 GPA. My biggest interests, in the vast field of software development, are Android development and cloud integrations. Most of my experience has been with backend kotlin applications using frameworks such as Spring Boot and Micronaut. In these applications I have integrated many technologies, including Kafka, JAXB, Jackson, Gradle and Maven build tools, and many more. I have experience with many tools in the CI/CD pipeline such as JIRA, Git (GitHub and Bitbucket), Jenkins, OpenShift, Splunk, and Grafana.",
+export const strings = {
+  myStatement: {
+    intro: (
+      <b key="bolded" className="bold">
+        Hello!
+      </b>
+    ),
+    body: " I am Nathan Porter, a software developer with 3+ years experience. I graduated in 2021 from the University of Memphis with a 3.7 GPA. My biggest interests, in the vast field of software development, are Android development and cloud integrations. Most of my experience has been with backend kotlin applications using frameworks such as Spring Boot and Micronaut. In these applications I have integrated many technologies, including Kafka, JAXB, Jackson, Gradle and Maven build tools, and many more. I have experience with many tools in the CI/CD pipeline such as JIRA, Git (GitHub and Bitbucket), Jenkins, OpenShift, Splunk, and Grafana.",
+  },
   categorizedLanguages: [
     {
       name: "Fluent",
@@ -29,7 +35,7 @@ const strings = {
       ],
     },
     {
-      name: "Have Experience With",
+      name: "Conversational",
       languages: [
         {
           name: "Python",
@@ -71,4 +77,23 @@ const strings = {
     },
   ],
 };
-export default strings;
+
+export const menuLinks = {
+  links: [
+    {
+      name: "github",
+      imageLocation: "/github-mark.svg",
+      url: "https://github.com/naporter",
+    },
+    {
+      name: "linkedin",
+      imageLocation: "/linkedin-white.png",
+      url: "https://github.com/naporter",
+    },
+    {
+      name: "mail",
+      imageLocation: "/email.svg",
+      url: "mailto:nathanporter@outlook.com",
+    },
+  ],
+};
